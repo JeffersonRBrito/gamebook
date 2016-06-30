@@ -1,7 +1,10 @@
+package comp2.got.basic;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
+
+import comp2.got.players.Mage;
 
 /**
  * Created by filipebraida on 31/05/16.
@@ -45,7 +48,7 @@ public class Engine {
                 "O Sensei Duarte falou para você ficar na floresta treinando " +
                 "o amakakeiru 12/12.", escolhasIniciais);
 
-        Book livro = new Book("A história da Rural", eventoInitial, new Player(10, 10));
+        Book livro = new Book("A história da Rural", eventoInitial, new Mage(10, 10));
 
         return livro;
     }

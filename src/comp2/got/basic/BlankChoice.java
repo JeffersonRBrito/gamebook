@@ -1,3 +1,4 @@
+package comp2.got.basic;
 /**
  * Created by filipebraida on 31/05/16.
  */
