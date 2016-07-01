@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
+import comp2.got.enumerators.Attribute;
 import comp2.got.enumerators.ItemType;
 
 /**
@@ -31,6 +32,13 @@ public abstract class Player extends Character {
     	if (availbleSlots > 0) {
     		this.equipedItem.add(item);
     		this.maximumItemByType.put(item.getItemType(), availbleSlots--);
+    		
+    		// Add the item strength to the character
+    		for (Attribute attribute : Attribute.values()) {
+				int attValue = item.affectedAttributes.getAttributeValue(attribute);
+				this.attributeSet.setAttributeValue(attribute, attValue);
+			}
+    		
     		return true;
     	}
     	

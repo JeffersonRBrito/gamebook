@@ -36,4 +36,6 @@ public class Mage extends Player {
 			this.equipItem(item);
 		}
 	}
+	
+	
 }

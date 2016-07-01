@@ -6,6 +6,7 @@ public class Item {
 	
 	private String name;
 	private String description;
+	private float dropRate = 0.2f; //default chance of droping of 20%
 	private ItemType type;
 	public AttributeSet affectedAttributes;
 	
@@ -21,6 +22,15 @@ public class Item {
 		this.description = description;
 		this.type = type;
 		this.affectedAttributes = affectedAttributes;
+	}
+	
+	public void setDropRate(float rate){
+		if (rate > 0f && rate < 1f)
+			this.dropRate = rate;
+	}
+	
+	public float getDropRate(){
+		return this.dropRate;
 	}
 	
 	public String getName(){
