@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
 
+import comp2.got.file.FileManager;
 import comp2.got.players.Mage;
 
 /**
@@ -36,6 +37,16 @@ public class Engine {
     }
 
     public static Book createBook() {
+    	FileManager fmEvents = new FileManager(System.getProperty("user.dir") + "/history/events.tsv");
+    	FileManager fmChoices = new FileManager(System.getProperty("user.dir") + "/history/choices.tsv");
+    	try {
+			ArrayList<String> events = fmEvents.getAllFileContent();
+			ArrayList<String> choices = fmChoices.getAllFileContent();
+			System.out.println(events);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	
         Event eventoFinal = new BlankEvent("Você morreu porque o Duarte não mandou ir para a trilha.", new ArrayList<Choice>());
 
         Collection escolhasIniciais = new ArrayList<Choice>();
